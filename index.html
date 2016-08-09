@@ -1,0 +1,59 @@
+<!--
+* Plugin de criação de form dinâmico
+* Versão 0.1
+*
+* Jéssica Oliveira Varreira < jessica.varreira@gmail.com >
+-->
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+	<script src=jquery-autoform.js></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+</head>
+<body>
+	<br><br>
+	<div id="integration_form"></div>
+</body>
+<script>
+
+var options = {
+	"secret":"jjdsfkgsakjnnlasljugdgnmsplso",
+	"token": "dshgftbfhjfmdbsfvsnsmmssnbgsg",
+	"url": "/url",
+	"onSuccess": "Dados recebidos com sucesso!",
+	"onError": "Ocorreu um erro",
+	"formTitle": "Deseja receber nosso material por e-mail? Preencha os dados abaixo.",
+	"fields":[
+		{
+			"nome": "nome",
+			"type": "text",
+			"obrig": true
+		},
+		{
+			"nome": "email",
+			"type": "text",
+			"obrig": true
+		},
+		{
+			"nome": "estado",
+			"type": "select",
+			"obrig": false,
+			"values":["PR","SC","SP","RS"]
+		},
+		{
+			"nome": "nivel",
+			"type": "select",
+			"obrig": false,
+			"values":["Iniciante","Intermediário","Avançado","Ninja"]
+		}
+	]
+};
+
+$("#integration_form").autoForm(options);
+
+</script>
+</html>
